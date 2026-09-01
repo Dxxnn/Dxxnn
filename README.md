@@ -8,6 +8,7 @@ I build reliable software, responsible data-extraction pipelines, and reproducib
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Daniel_Lopez-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-lopez-419b74384/)
 [![GitHub](https://img.shields.io/badge/GitHub-Dxxnn-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Dxxnn)
+[![GitHub Education](https://img.shields.io/badge/GitHub_Education-Student_Developer_Pack-2F81F7?style=for-the-badge&logo=github&logoColor=white)](https://education.github.com/pack)
 
 </div>
 
@@ -69,6 +70,11 @@ Additional academic experience: JavaScript · Java · PHP
 ---
 
 ## Professional highlights
+
+→ **GitHub Education — Student Developer Pack**
+
+- Approved by GitHub Education for student benefits and the Student Developer Pack.
+- GitHub Pro is active on this account and displayed by GitHub in the profile's native Highlights section.
 
 → **Quality Engineering at Accenture**
 
