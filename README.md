@@ -89,7 +89,7 @@ $ cat focus.txt
 Quality Engineering
 Python Automation & Data Extraction
 Linux Endpoint Security
-Responsible AI-Assisted Development
+API Integration & Data Validation
 
 $ cat principles.txt
 Build reproducibly.
