@@ -75,6 +75,7 @@ Additional academic experience: JavaScript · Java · PHP
 | --- | --- | --- |
 | [Linux Endpoint Detection Lab](https://github.com/Dxxnn/sustentacion-endpoint-linux) | Reproducible Ubuntu lab comparing SIEM-like rules and Isolation Forest over **35,787 auditd events**. The controlled validation achieved **1.00 precision**, **0.7273 recall**, **0.8421 F1**, and **0.00 false-positive rate** for the rule-based detector. | Python, Linux, Bash, auditd, pandas, scikit-learn |
 | [Books Catalog Scraper](https://github.com/Dxxnn/books-catalog-scraper) | Responsible, modular web-scraping pipeline with robots.txt validation, pagination, retries, rate limiting, logging, data cleaning, CSV/JSON exports, unit tests, and CI. | Python, requests, BeautifulSoup, pandas, GitHub Actions |
+| Vehicle Data Collection Pipeline — Carvana *(in development)* | Reproduces public JSON API requests discovered through browser network inspection, handles pagination, validates records, and prepares normalized vehicle data for structured persistence. | Python, HTTP APIs, JSON, requests, pandas |
 
 ---
 
