@@ -57,23 +57,7 @@ Additional academic experience: JavaScript · Java · PHP
 
 <div align="center">
 
-![Public repositories](https://img.shields.io/badge/Public_repositories-3-58A6FF?style=for-the-badge&logo=github&logoColor=white)
-![Automated tests](https://img.shields.io/badge/Automated_tests-12_passing-2DD4BF?style=for-the-badge&logo=pytest&logoColor=white)
-![Continuous integration](https://img.shields.io/badge/CI-Passing-2DD4BF?style=for-the-badge&logo=githubactions&logoColor=white)
-![Security events](https://img.shields.io/badge/Security_events_analyzed-35%2C787-58A6FF?style=for-the-badge&logo=linux&logoColor=white)
-![MIT repositories](https://img.shields.io/badge/MIT_repositories-2-58A6FF?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
-
-<sub>Featured-project language mix: Python 79.2% · Shell 15.0% · Jupyter Notebook 5.9%</sub>
-
-<br><br>
-
-<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Dxxnn&theme=github_dark" alt="Daniel Lopez's GitHub contribution summary" />
-
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Dxxnn&theme=github_dark" alt="Languages by repository" />
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Dxxnn&theme=github_dark" alt="Languages by commit" />
-
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Dxxnn&theme=github_dark" alt="GitHub statistics" />
-<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Dxxnn&theme=github_dark&utcOffset=-5" alt="Commit activity by hour" />
+<img width="100%" src="assets/github-analytics.svg" alt="Current GitHub activity and verified project analytics for Daniel Lopez" />
 
 </div>
 

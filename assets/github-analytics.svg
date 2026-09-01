@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title description">
+  <title id="title">Dxxnn GitHub and project analytics</title>
+  <desc id="description">Current GitHub activity and verified portfolio metrics generated from the GitHub API.</desc>
+  <style>
+    text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .panel { fill: #161B22; stroke: #30363D; stroke-width: 1; }
+    .title { fill: #F0F6FC; font-size: 24px; font-weight: 650; }
+    .section { fill: #F0F6FC; font-size: 17px; font-weight: 600; }
+    .metric { fill: #58A6FF; font-size: 28px; font-weight: 700; }
+    .label { fill: #C9D1D9; font-size: 14px; font-weight: 550; }
+    .muted { fill: #8B949E; font-size: 13px; }
+    .small { font-size: 11px; }
+    .good { fill: #2DD4BF; font-size: 14px; font-weight: 650; }
+  </style>
+  <rect x="1" y="1" width="998" height="438" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
+  <text x="40" y="49" class="title">GitHub analytics · Dxxnn</text>
+  <text x="960" y="48" text-anchor="end" class="muted">Generated from GitHub API</text>
+  
+  <rect x="40" y="82" width="210" height="92" rx="12" class="panel"/>
+  <text x="58" y="120" class="metric">57</text>
+  <text x="58" y="145" class="label">contributions</text>
+  <text x="58" y="164" class="muted small">last 12 months</text>
+  <rect x="270" y="82" width="210" height="92" rx="12" class="panel"/>
+  <text x="288" y="120" class="metric">47</text>
+  <text x="288" y="145" class="label">commits</text>
+  <text x="288" y="164" class="muted small">last 12 months</text>
+  <rect x="500" y="82" width="210" height="92" rx="12" class="panel"/>
+  <text x="518" y="120" class="metric">3</text>
+  <text x="518" y="145" class="label">pull requests</text>
+  <text x="518" y="164" class="muted small">last 12 months</text>
+  <rect x="730" y="82" width="210" height="92" rx="12" class="panel"/>
+  <text x="748" y="120" class="metric">3</text>
+  <text x="748" y="145" class="label">public repositories</text>
+  <text x="748" y="164" class="muted small">owned by Dxxnn</text>
+
+  <rect x="40" y="198" width="540" height="202" rx="12" class="panel"/>
+  <text x="68" y="230" class="section">Featured-project language mix</text>
+  
+  <text x="68" y="264" class="label">Python</text>
+  <rect x="205" y="250" width="300" height="12" rx="6" fill="#21262D"/>
+  <rect x="205" y="250" width="237.5" height="12" rx="6" fill="#58A6FF"/>
+  <text x="520" y="264" class="muted">79.2%</text>
+  <text x="68" y="308" class="label">Shell</text>
+  <rect x="205" y="294" width="300" height="12" rx="6" fill="#21262D"/>
+  <rect x="205" y="294" width="44.9" height="12" rx="6" fill="#2DD4BF"/>
+  <text x="520" y="308" class="muted">15.0%</text>
+  <text x="68" y="352" class="label">Jupyter Notebook</text>
+  <rect x="205" y="338" width="300" height="12" rx="6" fill="#21262D"/>
+  <rect x="205" y="338" width="17.6" height="12" rx="6" fill="#A78BFA"/>
+  <text x="520" y="352" class="muted">5.9%</text>
+
+  <rect x="600" y="198" width="360" height="202" rx="12" class="panel"/>
+  <text x="628" y="230" class="section">Verified project signals</text>
+  <circle cx="635" cy="264" r="5" fill="#2DD4BF"/>
+  <text x="650" y="269" class="label">12 automated tests passing</text>
+  <circle cx="635" cy="300" r="5" fill="#2DD4BF"/>
+  <text x="650" y="305" class="label">CI status: <tspan class="good">Passing</tspan></text>
+  <circle cx="635" cy="336" r="5" fill="#58A6FF"/>
+  <text x="650" y="341" class="label">35,787 security events analyzed</text>
+  <circle cx="635" cy="372" r="5" fill="#58A6FF"/>
+  <text x="650" y="377" class="label">2 MIT-licensed portfolio repositories</text>
+  <text x="960" y="422" text-anchor="end" class="muted small">Public activity only · private repositories excluded</text>
+</svg>
