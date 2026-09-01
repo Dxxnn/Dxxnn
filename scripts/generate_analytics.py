@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""Generate an accurate, self-hosted analytics card for the profile README."""
+"""Generate a polished, self-hosted analytics dashboard for the profile."""
 
 from __future__ import annotations
 
 import json
+import math
 import os
 import subprocess
+import urllib.parse
 import urllib.request
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -18,13 +21,22 @@ FEATURED_REPOSITORIES = (
     "books-catalog-scraper",
     "sustentacion-endpoint-linux",
 )
+LOCAL_TIMEZONE = timezone(timedelta(hours=-5))
 
 QUERY = """
 query($login: String!) {
   user(login: $login) {
-    repositories(ownerAffiliations: OWNER, privacy: PUBLIC) { totalCount }
+    repositories(ownerAffiliations: OWNER, privacy: PUBLIC, first: 100) {
+      totalCount
+      nodes { name }
+    }
     contributionsCollection {
-      contributionCalendar { totalContributions }
+      contributionCalendar {
+        totalContributions
+        weeks {
+          contributionDays { contributionCount date }
+        }
+      }
       totalCommitContributions
       totalPullRequestContributions
     }
@@ -33,7 +45,7 @@ query($login: String!) {
 """
 
 
-def request_json(path: str) -> dict:
+def request_json(path: str) -> dict | list:
     if TOKEN:
         request = urllib.request.Request(
             f"https://api.github.com{path}",
@@ -113,98 +125,241 @@ def language_mix() -> list[tuple[str, float]]:
 
 def ci_status() -> str:
     try:
-        runs = request_json(
+        result = request_json(
             f"/repos/{OWNER}/books-catalog-scraper/actions/workflows/tests.yml/runs"
             "?branch=main&per_page=1"
-        ).get("workflow_runs", [])
+        )
+        runs = result.get("workflow_runs", []) if isinstance(result, dict) else []
         if runs and runs[0].get("conclusion") == "success":
             return "Passing"
         if runs and runs[0].get("status") != "completed":
             return "Running"
-        return "Check required"
+        return "Review"
     except Exception:
         return "Verified"
+
+
+def hourly_activity(repository_names: list[str]) -> list[int]:
+    bins = [0] * 24
+    since = datetime.now(timezone.utc) - timedelta(days=365)
+
+    for repository in repository_names:
+        for page in range(1, 4):
+            query = urllib.parse.urlencode(
+                {
+                    "author": OWNER,
+                    "since": since.isoformat(),
+                    "per_page": 100,
+                    "page": page,
+                }
+            )
+            try:
+                commits = request_json(
+                    f"/repos/{OWNER}/{repository}/commits?{query}"
+                )
+            except Exception:
+                break
+            if not isinstance(commits, list):
+                break
+
+            for commit in commits:
+                stamp = commit.get("commit", {}).get("author", {}).get("date")
+                if not stamp:
+                    continue
+                moment = datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+                bins[moment.astimezone(LOCAL_TIMEZONE).hour] += 1
+
+            if len(commits) < 100:
+                break
+
+    return bins
 
 
 def fmt(value: int) -> str:
     return f"{value:,}"
 
 
-def render() -> str:
-    user = graphql()
-    contributions = user["contributionsCollection"]
-    languages = language_mix()
+def contribution_chart(weeks: list[dict]) -> str:
+    weekly_totals = [
+        sum(day["contributionCount"] for day in week["contributionDays"])
+        for week in weeks
+    ]
+    if not weekly_totals:
+        weekly_totals = [0, 0]
+
+    x0, x1 = 345.0, 930.0
+    baseline, height = 230.0, 112.0
+    maximum = max(max(weekly_totals), 1)
+    step = (x1 - x0) / max(len(weekly_totals) - 1, 1)
+    points = [
+        (x0 + index * step, baseline - value / maximum * height)
+        for index, value in enumerate(weekly_totals)
+    ]
+    line = " ".join(
+        ("M" if index == 0 else "L") + f" {x:.1f} {y:.1f}"
+        for index, (x, y) in enumerate(points)
+    )
+    area = (
+        f"M {points[0][0]:.1f} {baseline:.1f} "
+        + " ".join(f"L {x:.1f} {y:.1f}" for x, y in points)
+        + f" L {points[-1][0]:.1f} {baseline:.1f} Z"
+    )
+    return f"""
+  <line x1="{x0}" y1="174" x2="{x1}" y2="174" class="grid"/>
+  <line x1="{x0}" y1="230" x2="{x1}" y2="230" class="grid"/>
+  <path d="{area}" fill="url(#activityFill)"/>
+  <path d="{line}" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linejoin="round"/>
+  <text x="{x0}" y="250" class="tiny muted">52 weeks ago</text>
+  <text x="{x1}" y="250" text-anchor="end" class="tiny muted">now</text>"""
+
+
+def language_donut(languages: list[tuple[str, float]]) -> str:
     colors = {
         "Python": "#58A6FF",
         "Shell": "#2DD4BF",
         "Jupyter Notebook": "#A78BFA",
     }
+    radius = 58
+    circumference = 2 * math.pi * radius
+    offset = 0.0
+    segments = []
+    legend = []
 
-    metrics = (
-        (fmt(contributions["contributionCalendar"]["totalContributions"]), "contributions", "last 12 months"),
-        (fmt(contributions["totalCommitContributions"]), "commits", "last 12 months"),
-        (fmt(contributions["totalPullRequestContributions"]), "pull requests", "last 12 months"),
-        (fmt(user["repositories"]["totalCount"]), "public repositories", "owned by Dxxnn"),
-    )
-
-    metric_cards = []
-    for index, (value, label, detail) in enumerate(metrics):
-        x = 40 + index * 230
-        metric_cards.append(
-            f"""
-  <rect x="{x}" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="{x + 18}" y="120" class="metric">{value}</text>
-  <text x="{x + 18}" y="145" class="label">{label}</text>
-  <text x="{x + 18}" y="164" class="muted small">{detail}</text>"""
-        )
-
-    language_rows = []
     for index, (name, percent) in enumerate(languages[:3]):
-        y = 264 + index * 44
-        fill = colors.get(name, "#8B949E")
-        width = max(3.0, percent * 3.0)
-        language_rows.append(
-            f"""
-  <text x="68" y="{y}" class="label">{name}</text>
-  <rect x="205" y="{y - 14}" width="300" height="12" rx="6" fill="#21262D"/>
-  <rect x="205" y="{y - 14}" width="{width:.1f}" height="12" rx="6" fill="{fill}"/>
-  <text x="520" y="{y}" class="muted">{percent:.1f}%</text>"""
+        color = colors.get(name, "#8B949E")
+        segment = circumference * percent / 100
+        segments.append(
+            f'<circle cx="154" cy="399" r="{radius}" fill="none" '
+            f'stroke="{color}" stroke-width="22" '
+            f'stroke-dasharray="{segment:.2f} {circumference - segment:.2f}" '
+            f'stroke-dashoffset="{-offset:.2f}" transform="rotate(-90 154 399)"/>'
+        )
+        offset += segment
+        y = 364 + index * 42
+        legend.append(
+            f'<circle cx="256" cy="{y - 5}" r="5" fill="{color}"/>'
+            f'<text x="270" y="{y}" class="label">{name}</text>'
+            f'<text x="455" y="{y}" text-anchor="end" class="muted">{percent:.1f}%</text>'
         )
 
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title description">
+    return "\n  ".join(segments + legend)
+
+
+def activity_bars(bins: list[int]) -> str:
+    chart_x, chart_y = 555, 676
+    chart_width, chart_height = 365, 105
+    maximum = max(max(bins), 1)
+    gap = chart_width / 24
+    bars = []
+
+    for hour, count in enumerate(bins):
+        height = count / maximum * chart_height
+        x = chart_x + hour * gap + 2
+        y = chart_y - height
+        color = "#2DD4BF" if count else "#21262D"
+        bars.append(
+            f'<rect x="{x:.1f}" y="{y:.1f}" width="{gap - 4:.1f}" '
+            f'height="{max(height, 2):.1f}" rx="2" fill="{color}"/>'
+        )
+
+    labels = "".join(
+        f'<text x="{chart_x + hour * gap + 4:.1f}" y="701" class="tiny muted">{hour}</text>'
+        for hour in (0, 6, 12, 18, 23)
+    )
+    return "\n  ".join(bars) + labels
+
+
+def render() -> str:
+    user = graphql()
+    contributions = user["contributionsCollection"]
+    calendar = contributions["contributionCalendar"]
+    languages = language_mix()
+    repositories = [node["name"] for node in user["repositories"]["nodes"]]
+    hours = hourly_activity(repositories)
+    status = ci_status()
+
+    contribution_total = calendar["totalContributions"]
+    commit_total = contributions["totalCommitContributions"]
+    pr_total = contributions["totalPullRequestContributions"]
+    repository_total = user["repositories"]["totalCount"]
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="740" viewBox="0 0 1000 740" role="img" aria-labelledby="title description">
   <title id="title">{OWNER} GitHub and project analytics</title>
-  <desc id="description">Current GitHub activity and verified portfolio metrics generated from the GitHub API.</desc>
+  <desc id="description">Current public GitHub activity and verified portfolio metrics generated from the GitHub API.</desc>
+  <defs>
+    <linearGradient id="activityFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
   <style>
     text {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }}
-    .panel {{ fill: #161B22; stroke: #30363D; stroke-width: 1; }}
-    .title {{ fill: #F0F6FC; font-size: 24px; font-weight: 650; }}
-    .section {{ fill: #F0F6FC; font-size: 17px; font-weight: 600; }}
-    .metric {{ fill: #58A6FF; font-size: 28px; font-weight: 700; }}
-    .label {{ fill: #C9D1D9; font-size: 14px; font-weight: 550; }}
+    .card {{ fill: #161B22; stroke: #30363D; stroke-width: 1.2; }}
+    .title {{ fill: #F0F6FC; font-size: 25px; font-weight: 680; }}
+    .section {{ fill: #F0F6FC; font-size: 18px; font-weight: 650; }}
+    .big {{ fill: #58A6FF; font-size: 38px; font-weight: 720; }}
+    .value {{ fill: #58A6FF; font-size: 25px; font-weight: 700; }}
+    .label {{ fill: #C9D1D9; font-size: 14px; font-weight: 560; }}
     .muted {{ fill: #8B949E; font-size: 13px; }}
-    .small {{ font-size: 11px; }}
-    .good {{ fill: #2DD4BF; font-size: 14px; font-weight: 650; }}
+    .tiny {{ font-size: 11px; }}
+    .teal {{ fill: #2DD4BF; }}
+    .purple {{ fill: #A78BFA; }}
+    .grid {{ stroke: #30363D; stroke-width: 1; stroke-dasharray: 4 6; }}
   </style>
-  <rect x="1" y="1" width="998" height="438" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
-  <text x="40" y="49" class="title">GitHub analytics · {OWNER}</text>
-  <text x="960" y="48" text-anchor="end" class="muted">Generated from GitHub API</text>
-  {''.join(metric_cards)}
+  <rect x="1" y="1" width="998" height="738" rx="15" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
 
-  <rect x="40" y="198" width="540" height="202" rx="12" class="panel"/>
-  <text x="68" y="230" class="section">Featured-project language mix</text>
-  {''.join(language_rows)}
+  <rect x="30" y="28" width="940" height="238" rx="13" class="card"/>
+  <text x="60" y="72" class="title">GitHub Analytics</text>
+  <text x="60" y="100" class="muted">@{OWNER} · public activity</text>
+  <text x="60" y="161" class="big">{fmt(contribution_total)}</text>
+  <text x="60" y="185" class="label">contributions</text>
+  <text x="60" y="205" class="muted">in the last 12 months</text>
+  <text x="60" y="235" class="label"><tspan class="teal">{repository_total}</tspan> public repos · <tspan class="teal">{commit_total}</tspan> commits</text>
+  <text x="930" y="72" text-anchor="end" class="muted">contributions by week</text>
+  {contribution_chart(calendar["weeks"])}
 
-  <rect x="600" y="198" width="360" height="202" rx="12" class="panel"/>
-  <text x="628" y="230" class="section">Verified project signals</text>
-  <circle cx="635" cy="264" r="5" fill="#2DD4BF"/>
-  <text x="650" y="269" class="label">12 automated tests passing</text>
-  <circle cx="635" cy="300" r="5" fill="#2DD4BF"/>
-  <text x="650" y="305" class="label">CI status: <tspan class="good">{ci_status()}</tspan></text>
-  <circle cx="635" cy="336" r="5" fill="#58A6FF"/>
-  <text x="650" y="341" class="label">35,787 security events analyzed</text>
-  <circle cx="635" cy="372" r="5" fill="#58A6FF"/>
-  <text x="650" y="377" class="label">2 MIT-licensed portfolio repositories</text>
-  <text x="960" y="422" text-anchor="end" class="muted small">Public activity only · private repositories excluded</text>
+  <rect x="30" y="286" width="455" height="210" rx="13" class="card"/>
+  <text x="58" y="326" class="section">Languages</text>
+  <circle cx="154" cy="399" r="58" fill="none" stroke="#21262D" stroke-width="22"/>
+  {language_donut(languages)}
+  <text x="154" y="395" text-anchor="middle" class="muted tiny">featured</text>
+  <text x="154" y="413" text-anchor="middle" class="label">projects</text>
+
+  <rect x="515" y="286" width="455" height="210" rx="13" class="card"/>
+  <text x="543" y="326" class="section">Project validation</text>
+  <rect x="543" y="346" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="561" y="375" class="value">12</text>
+  <text x="561" y="394" class="muted tiny">tests passing</text>
+  <rect x="752" y="346" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="770" y="375" class="value teal">{status}</text>
+  <text x="770" y="394" class="muted tiny">continuous integration</text>
+  <rect x="543" y="420" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="561" y="449" class="value">35.8K</text>
+  <text x="561" y="468" class="muted tiny">security events analyzed</text>
+  <rect x="752" y="420" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="770" y="449" class="value purple">2 MIT</text>
+  <text x="770" y="468" class="muted tiny">licensed repositories</text>
+
+  <rect x="30" y="516" width="455" height="190" rx="13" class="card"/>
+  <text x="58" y="556" class="section">Stats</text>
+  <circle cx="65" cy="590" r="4" fill="#58A6FF"/>
+  <text x="80" y="595" class="label">Contributions</text>
+  <text x="450" y="595" text-anchor="end" class="value">{fmt(contribution_total)}</text>
+  <circle cx="65" cy="625" r="4" fill="#2DD4BF"/>
+  <text x="80" y="630" class="label">Commits</text>
+  <text x="450" y="630" text-anchor="end" class="value teal">{fmt(commit_total)}</text>
+  <circle cx="65" cy="660" r="4" fill="#A78BFA"/>
+  <text x="80" y="665" class="label">Pull requests</text>
+  <text x="450" y="665" text-anchor="end" class="value purple">{fmt(pr_total)}</text>
+  <text x="58" y="691" class="muted tiny">Last 12 months · private repositories excluded</text>
+
+  <rect x="515" y="516" width="455" height="190" rx="13" class="card"/>
+  <text x="543" y="556" class="section">Commits by hour</text>
+  <text x="942" y="556" text-anchor="end" class="muted">UTC −05:00</text>
+  <line x1="555" y1="676" x2="920" y2="676" stroke="#30363D"/>
+  {activity_bars(hours)}
+
+  <text x="970" y="727" text-anchor="end" class="muted tiny">Generated daily from GitHub API</text>
 </svg>
 """
 

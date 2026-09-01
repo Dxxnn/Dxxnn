@@ -1,63 +1,112 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title description">
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="740" viewBox="0 0 1000 740" role="img" aria-labelledby="title description">
   <title id="title">Dxxnn GitHub and project analytics</title>
-  <desc id="description">Current GitHub activity and verified portfolio metrics generated from the GitHub API.</desc>
+  <desc id="description">Current public GitHub activity and verified portfolio metrics generated from the GitHub API.</desc>
+  <defs>
+    <linearGradient id="activityFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#2DD4BF" stop-opacity="0.03"/>
+    </linearGradient>
+  </defs>
   <style>
     text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
-    .panel { fill: #161B22; stroke: #30363D; stroke-width: 1; }
-    .title { fill: #F0F6FC; font-size: 24px; font-weight: 650; }
-    .section { fill: #F0F6FC; font-size: 17px; font-weight: 600; }
-    .metric { fill: #58A6FF; font-size: 28px; font-weight: 700; }
-    .label { fill: #C9D1D9; font-size: 14px; font-weight: 550; }
+    .card { fill: #161B22; stroke: #30363D; stroke-width: 1.2; }
+    .title { fill: #F0F6FC; font-size: 25px; font-weight: 680; }
+    .section { fill: #F0F6FC; font-size: 18px; font-weight: 650; }
+    .big { fill: #58A6FF; font-size: 38px; font-weight: 720; }
+    .value { fill: #58A6FF; font-size: 25px; font-weight: 700; }
+    .label { fill: #C9D1D9; font-size: 14px; font-weight: 560; }
     .muted { fill: #8B949E; font-size: 13px; }
-    .small { font-size: 11px; }
-    .good { fill: #2DD4BF; font-size: 14px; font-weight: 650; }
+    .tiny { font-size: 11px; }
+    .teal { fill: #2DD4BF; }
+    .purple { fill: #A78BFA; }
+    .grid { stroke: #30363D; stroke-width: 1; stroke-dasharray: 4 6; }
   </style>
-  <rect x="1" y="1" width="998" height="438" rx="14" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
-  <text x="40" y="49" class="title">GitHub analytics · Dxxnn</text>
-  <text x="960" y="48" text-anchor="end" class="muted">Generated from GitHub API</text>
-  
-  <rect x="40" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="58" y="120" class="metric">35</text>
-  <text x="58" y="145" class="label">contributions</text>
-  <text x="58" y="164" class="muted small">last 12 months</text>
-  <rect x="270" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="288" y="120" class="metric">32</text>
-  <text x="288" y="145" class="label">commits</text>
-  <text x="288" y="164" class="muted small">last 12 months</text>
-  <rect x="500" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="518" y="120" class="metric">0</text>
-  <text x="518" y="145" class="label">pull requests</text>
-  <text x="518" y="164" class="muted small">last 12 months</text>
-  <rect x="730" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="748" y="120" class="metric">3</text>
-  <text x="748" y="145" class="label">public repositories</text>
-  <text x="748" y="164" class="muted small">owned by Dxxnn</text>
+  <rect x="1" y="1" width="998" height="738" rx="15" fill="#0D1117" stroke="#30363D" stroke-width="2"/>
 
-  <rect x="40" y="198" width="540" height="202" rx="12" class="panel"/>
-  <text x="68" y="230" class="section">Featured-project language mix</text>
+  <rect x="30" y="28" width="940" height="238" rx="13" class="card"/>
+  <text x="60" y="72" class="title">GitHub Analytics</text>
+  <text x="60" y="100" class="muted">@Dxxnn · public activity</text>
+  <text x="60" y="161" class="big">58</text>
+  <text x="60" y="185" class="label">contributions</text>
+  <text x="60" y="205" class="muted">in the last 12 months</text>
+  <text x="60" y="235" class="label"><tspan class="teal">3</tspan> public repos · <tspan class="teal">48</tspan> commits</text>
+  <text x="930" y="72" text-anchor="end" class="muted">contributions by week</text>
   
-  <text x="68" y="264" class="label">Python</text>
-  <rect x="205" y="250" width="300" height="12" rx="6" fill="#21262D"/>
-  <rect x="205" y="250" width="237.5" height="12" rx="6" fill="#58A6FF"/>
-  <text x="520" y="264" class="muted">79.2%</text>
-  <text x="68" y="308" class="label">Shell</text>
-  <rect x="205" y="294" width="300" height="12" rx="6" fill="#21262D"/>
-  <rect x="205" y="294" width="44.9" height="12" rx="6" fill="#2DD4BF"/>
-  <text x="520" y="308" class="muted">15.0%</text>
-  <text x="68" y="352" class="label">Jupyter Notebook</text>
-  <rect x="205" y="338" width="300" height="12" rx="6" fill="#21262D"/>
-  <rect x="205" y="338" width="17.6" height="12" rx="6" fill="#A78BFA"/>
-  <text x="520" y="352" class="muted">5.9%</text>
+  <line x1="345.0" y1="174" x2="930.0" y2="174" class="grid"/>
+  <line x1="345.0" y1="230" x2="930.0" y2="230" class="grid"/>
+  <path d="M 345.0 230.0 L 345.0 230.0 L 356.2 230.0 L 367.5 230.0 L 378.8 230.0 L 390.0 230.0 L 401.2 230.0 L 412.5 230.0 L 423.8 230.0 L 435.0 230.0 L 446.2 230.0 L 457.5 230.0 L 468.8 230.0 L 480.0 230.0 L 491.2 230.0 L 502.5 230.0 L 513.8 230.0 L 525.0 230.0 L 536.2 230.0 L 547.5 230.0 L 558.8 230.0 L 570.0 230.0 L 581.2 230.0 L 592.5 138.4 L 603.8 230.0 L 615.0 230.0 L 626.2 230.0 L 637.5 230.0 L 648.8 230.0 L 660.0 230.0 L 671.2 230.0 L 682.5 230.0 L 693.8 230.0 L 705.0 230.0 L 716.2 230.0 L 727.5 230.0 L 738.8 230.0 L 750.0 230.0 L 761.2 230.0 L 772.5 230.0 L 783.8 118.0 L 795.0 230.0 L 806.2 230.0 L 817.5 230.0 L 828.8 230.0 L 840.0 230.0 L 851.2 209.6 L 862.5 230.0 L 873.8 204.5 L 885.0 230.0 L 896.2 224.9 L 907.5 230.0 L 918.8 230.0 L 930.0 189.3 L 930.0 230.0 Z" fill="url(#activityFill)"/>
+  <path d="M 345.0 230.0 L 356.2 230.0 L 367.5 230.0 L 378.8 230.0 L 390.0 230.0 L 401.2 230.0 L 412.5 230.0 L 423.8 230.0 L 435.0 230.0 L 446.2 230.0 L 457.5 230.0 L 468.8 230.0 L 480.0 230.0 L 491.2 230.0 L 502.5 230.0 L 513.8 230.0 L 525.0 230.0 L 536.2 230.0 L 547.5 230.0 L 558.8 230.0 L 570.0 230.0 L 581.2 230.0 L 592.5 138.4 L 603.8 230.0 L 615.0 230.0 L 626.2 230.0 L 637.5 230.0 L 648.8 230.0 L 660.0 230.0 L 671.2 230.0 L 682.5 230.0 L 693.8 230.0 L 705.0 230.0 L 716.2 230.0 L 727.5 230.0 L 738.8 230.0 L 750.0 230.0 L 761.2 230.0 L 772.5 230.0 L 783.8 118.0 L 795.0 230.0 L 806.2 230.0 L 817.5 230.0 L 828.8 230.0 L 840.0 230.0 L 851.2 209.6 L 862.5 230.0 L 873.8 204.5 L 885.0 230.0 L 896.2 224.9 L 907.5 230.0 L 918.8 230.0 L 930.0 189.3" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linejoin="round"/>
+  <text x="345.0" y="250" class="tiny muted">52 weeks ago</text>
+  <text x="930.0" y="250" text-anchor="end" class="tiny muted">now</text>
 
-  <rect x="600" y="198" width="360" height="202" rx="12" class="panel"/>
-  <text x="628" y="230" class="section">Verified project signals</text>
-  <circle cx="635" cy="264" r="5" fill="#2DD4BF"/>
-  <text x="650" y="269" class="label">12 automated tests passing</text>
-  <circle cx="635" cy="300" r="5" fill="#2DD4BF"/>
-  <text x="650" y="305" class="label">CI status: <tspan class="good">Passing</tspan></text>
-  <circle cx="635" cy="336" r="5" fill="#58A6FF"/>
-  <text x="650" y="341" class="label">35,787 security events analyzed</text>
-  <circle cx="635" cy="372" r="5" fill="#58A6FF"/>
-  <text x="650" y="377" class="label">2 MIT-licensed portfolio repositories</text>
-  <text x="960" y="422" text-anchor="end" class="muted small">Public activity only · private repositories excluded</text>
+  <rect x="30" y="286" width="455" height="210" rx="13" class="card"/>
+  <text x="58" y="326" class="section">Languages</text>
+  <circle cx="154" cy="399" r="58" fill="none" stroke="#21262D" stroke-width="22"/>
+  <circle cx="154" cy="399" r="58" fill="none" stroke="#58A6FF" stroke-width="22" stroke-dasharray="288.54 75.88" stroke-dashoffset="-0.00" transform="rotate(-90 154 399)"/>
+  <circle cx="154" cy="399" r="58" fill="none" stroke="#2DD4BF" stroke-width="22" stroke-dasharray="54.53 309.90" stroke-dashoffset="-288.54" transform="rotate(-90 154 399)"/>
+  <circle cx="154" cy="399" r="58" fill="none" stroke="#A78BFA" stroke-width="22" stroke-dasharray="21.36 343.07" stroke-dashoffset="-343.07" transform="rotate(-90 154 399)"/>
+  <circle cx="256" cy="359" r="5" fill="#58A6FF"/><text x="270" y="364" class="label">Python</text><text x="455" y="364" text-anchor="end" class="muted">79.2%</text>
+  <circle cx="256" cy="401" r="5" fill="#2DD4BF"/><text x="270" y="406" class="label">Shell</text><text x="455" y="406" text-anchor="end" class="muted">15.0%</text>
+  <circle cx="256" cy="443" r="5" fill="#A78BFA"/><text x="270" y="448" class="label">Jupyter Notebook</text><text x="455" y="448" text-anchor="end" class="muted">5.9%</text>
+  <text x="154" y="395" text-anchor="middle" class="muted tiny">featured</text>
+  <text x="154" y="413" text-anchor="middle" class="label">projects</text>
+
+  <rect x="515" y="286" width="455" height="210" rx="13" class="card"/>
+  <text x="543" y="326" class="section">Project validation</text>
+  <rect x="543" y="346" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="561" y="375" class="value">12</text>
+  <text x="561" y="394" class="muted tiny">tests passing</text>
+  <rect x="752" y="346" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="770" y="375" class="value teal">Passing</text>
+  <text x="770" y="394" class="muted tiny">continuous integration</text>
+  <rect x="543" y="420" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="561" y="449" class="value">35.8K</text>
+  <text x="561" y="468" class="muted tiny">security events analyzed</text>
+  <rect x="752" y="420" width="190" height="58" rx="10" fill="#0D1117" stroke="#30363D"/>
+  <text x="770" y="449" class="value purple">2 MIT</text>
+  <text x="770" y="468" class="muted tiny">licensed repositories</text>
+
+  <rect x="30" y="516" width="455" height="190" rx="13" class="card"/>
+  <text x="58" y="556" class="section">Stats</text>
+  <circle cx="65" cy="590" r="4" fill="#58A6FF"/>
+  <text x="80" y="595" class="label">Contributions</text>
+  <text x="450" y="595" text-anchor="end" class="value">58</text>
+  <circle cx="65" cy="625" r="4" fill="#2DD4BF"/>
+  <text x="80" y="630" class="label">Commits</text>
+  <text x="450" y="630" text-anchor="end" class="value teal">48</text>
+  <circle cx="65" cy="660" r="4" fill="#A78BFA"/>
+  <text x="80" y="665" class="label">Pull requests</text>
+  <text x="450" y="665" text-anchor="end" class="value purple">3</text>
+  <text x="58" y="691" class="muted tiny">Last 12 months · private repositories excluded</text>
+
+  <rect x="515" y="516" width="455" height="190" rx="13" class="card"/>
+  <text x="543" y="556" class="section">Commits by hour</text>
+  <text x="942" y="556" text-anchor="end" class="muted">UTC −05:00</text>
+  <line x1="555" y1="676" x2="920" y2="676" stroke="#30363D"/>
+  <rect x="557.0" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="572.2" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="587.4" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="602.6" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="617.8" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="633.0" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="648.2" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="663.5" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="678.7" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="693.9" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="709.1" y="623.5" width="11.2" height="52.5" rx="2" fill="#2DD4BF"/>
+  <rect x="724.3" y="613.0" width="11.2" height="63.0" rx="2" fill="#2DD4BF"/>
+  <rect x="739.5" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="754.7" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="769.9" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="785.1" y="644.5" width="11.2" height="31.5" rx="2" fill="#2DD4BF"/>
+  <rect x="800.3" y="665.5" width="11.2" height="10.5" rx="2" fill="#2DD4BF"/>
+  <rect x="815.5" y="655.0" width="11.2" height="21.0" rx="2" fill="#2DD4BF"/>
+  <rect x="830.8" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="846.0" y="571.0" width="11.2" height="105.0" rx="2" fill="#2DD4BF"/>
+  <rect x="861.2" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="876.4" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="891.6" y="644.5" width="11.2" height="31.5" rx="2" fill="#2DD4BF"/>
+  <rect x="906.8" y="592.0" width="11.2" height="84.0" rx="2" fill="#2DD4BF"/><text x="559.0" y="701" class="tiny muted">0</text><text x="650.2" y="701" class="tiny muted">6</text><text x="741.5" y="701" class="tiny muted">12</text><text x="832.8" y="701" class="tiny muted">18</text><text x="908.8" y="701" class="tiny muted">23</text>
+
+  <text x="970" y="727" text-anchor="end" class="muted tiny">Generated daily from GitHub API</text>
 </svg>
