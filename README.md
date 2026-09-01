@@ -69,35 +69,6 @@ Additional academic experience: JavaScript · Java · PHP
 
 ---
 
-## Professional highlights
-
-→ **GitHub Education — Student Developer Pack**
-
-- Approved by GitHub Education for student benefits and the Student Developer Pack.
-- GitHub Pro is active on this account and displayed by GitHub in the profile's native Highlights section.
-
-→ **Quality Engineering at Accenture**
-
-- Supported functional testing, end-to-end flow validation, defect tracking, and test-evidence management in an interdisciplinary corporate environment.
-- Built foundations in Playwright, API testing, Git, SQL, Agile practices, DevOps, and information security.
-
-→ **Linux endpoint security research**
-
-- Built a reproducible Ubuntu laboratory using auditd, Bash, Python, pandas, and Isolation Forest.
-- Processed **35,787 security events** and compared SIEM-like rules with anomaly detection; the controlled rule-based validation achieved **1.00 precision**, **0.7273 recall**, **0.8421 F1**, and **0.00 false-positive rate**.
-
-→ **Responsible Python data extraction**
-
-- Developed a modular web-scraping pipeline with robots.txt validation, pagination, retries, rate limiting, structured logging, data cleaning, unit tests, and GitHub Actions.
-- Currently extending these skills to public JSON APIs, request inspection, validation, and structured persistence for vehicle data.
-
-→ **Teaching and academic development**
-
-- Worked as an Algorithms and Programming Teaching Assistant at Universidad EAN.
-- Completed an intensive mobile application development diploma at Universidad Nacional de Colombia.
-
----
-
 ## Featured projects
 
 | Project | What it demonstrates | Stack |
