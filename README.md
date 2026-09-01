@@ -57,7 +57,7 @@ Additional academic experience: JavaScript · Java · PHP
 
 <div align="center">
 
-<img width="100%" src="assets/github-analytics.svg" alt="Current GitHub activity and verified project analytics for Daniel Lopez" />
+<img width="100%" src="assets/github-analytics.svg?v=2" alt="Current GitHub activity and verified project analytics for Daniel Lopez" />
 
 </div>
 
