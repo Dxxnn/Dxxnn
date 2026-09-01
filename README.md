@@ -52,35 +52,52 @@ Additional academic experience: JavaScript · Java · PHP
 
 ---
 
+## GitHub analytics
+
+<div align="center">
+
+<img width="100%" src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=Dxxnn&theme=github_dark" alt="Daniel Lopez's GitHub contribution summary" />
+
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=Dxxnn&theme=github_dark" alt="Languages by repository" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=Dxxnn&theme=github_dark" alt="Languages by commit" />
+
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=Dxxnn&theme=github_dark" alt="GitHub statistics" />
+<img width="49%" src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=Dxxnn&theme=github_dark&utcOffset=-5" alt="Commit activity by hour" />
+
+</div>
+
+---
+
+## Professional highlights
+
+→ **Quality Engineering at Accenture**
+
+- Supported functional testing, end-to-end flow validation, defect tracking, and test-evidence management in an interdisciplinary corporate environment.
+- Built foundations in Playwright, API testing, Git, SQL, Agile practices, DevOps, and information security.
+
+→ **Linux endpoint security research**
+
+- Built a reproducible Ubuntu laboratory using auditd, Bash, Python, pandas, and Isolation Forest.
+- Processed **35,787 security events** and compared SIEM-like rules with anomaly detection; the controlled rule-based validation achieved **1.00 precision**, **0.7273 recall**, **0.8421 F1**, and **0.00 false-positive rate**.
+
+→ **Responsible Python data extraction**
+
+- Developed a modular web-scraping pipeline with robots.txt validation, pagination, retries, rate limiting, structured logging, data cleaning, unit tests, and GitHub Actions.
+- Currently extending these skills to public JSON APIs, request inspection, validation, and structured persistence for vehicle data.
+
+→ **Teaching and academic development**
+
+- Worked as an Algorithms and Programming Teaching Assistant at Universidad EAN.
+- Completed an intensive mobile application development diploma at Universidad Nacional de Colombia.
+
+---
+
 ## Featured projects
 
 | Project | What it demonstrates | Stack |
 | --- | --- | --- |
 | [Linux Endpoint Detection Lab](https://github.com/Dxxnn/sustentacion-endpoint-linux) | Reproducible Ubuntu lab comparing SIEM-like rules and Isolation Forest over **35,787 auditd events**. The controlled validation achieved **1.00 precision**, **0.7273 recall**, **0.8421 F1**, and **0.00 false-positive rate** for the rule-based detector. | Python, Linux, Bash, auditd, pandas, scikit-learn |
 | [Books Catalog Scraper](https://github.com/Dxxnn/books-catalog-scraper) | Responsible, modular web-scraping pipeline with robots.txt validation, pagination, retries, rate limiting, logging, data cleaning, CSV/JSON exports, unit tests, and CI. | Python, requests, BeautifulSoup, pandas, GitHub Actions |
-
----
-
-## Experience snapshot
-
-```text
-Quality Engineering Intern  → Accenture
-Teaching Assistant          → Algorithms & Programming · Universidad EAN
-Systems Engineering         → Universidad EAN
-
-Current interests           → QA Automation · Data Extraction · Linux Security
-```
-
----
-
-## GitHub analytics
-
-<div align="center">
-
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=Dxxnn&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github" alt="Daniel's GitHub statistics" />
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Dxxnn&layout=compact&theme=github_dark&hide_border=true" alt="Daniel's most used languages" />
-
-</div>
 
 ---
 
