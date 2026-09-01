@@ -1,8 +1,8 @@
 <div align="center">
 
-# Hi, I'm Daniel Lopez 👋
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&pause=1500&color=FFC800&center=true&vCenter=true&multiline=false&width=900&height=60&lines=Hey+%F0%9F%91%8B+I%27m+Daniel+Lopez%2C+Systems+Engineer&duration=4000" alt="Typing introduction: Hey, I'm Daniel Lopez, Systems Engineer" />
 
-### Systems Engineer · Quality Engineering · Python Automation · Cybersecurity
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&pause=1500&color=AAAAAA&center=true&vCenter=true&multiline=false&width=900&height=40&lines=Accenture+%7C+Universidad+EAN+%7C+Universidad+Nacional+de+Colombia&duration=4000" alt="Accenture, Universidad EAN and Universidad Nacional de Colombia" />
 
 I build reliable software, responsible data-extraction pipelines, and reproducible security experiments.
 
