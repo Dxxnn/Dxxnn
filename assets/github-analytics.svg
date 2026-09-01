@@ -17,15 +17,15 @@
   <text x="960" y="48" text-anchor="end" class="muted">Generated from GitHub API</text>
   
   <rect x="40" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="58" y="120" class="metric">57</text>
+  <text x="58" y="120" class="metric">35</text>
   <text x="58" y="145" class="label">contributions</text>
   <text x="58" y="164" class="muted small">last 12 months</text>
   <rect x="270" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="288" y="120" class="metric">47</text>
+  <text x="288" y="120" class="metric">32</text>
   <text x="288" y="145" class="label">commits</text>
   <text x="288" y="164" class="muted small">last 12 months</text>
   <rect x="500" y="82" width="210" height="92" rx="12" class="panel"/>
-  <text x="518" y="120" class="metric">3</text>
+  <text x="518" y="120" class="metric">0</text>
   <text x="518" y="145" class="label">pull requests</text>
   <text x="518" y="164" class="muted small">last 12 months</text>
   <rect x="730" y="82" width="210" height="92" rx="12" class="panel"/>
