@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&pause=1500&color=FFC800&center=true&vCenter=true&multiline=false&width=900&height=60&lines=Hey+%F0%9F%91%8B+I%27m+Daniel+Lopez%2C+Systems+Engineer&duration=4000" alt="Typing introduction: Hey, I'm Daniel Lopez, Systems Engineer" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=24&pause=1500&color=58A6FF&center=true&vCenter=true&multiline=false&width=900&height=60&lines=Hey+%F0%9F%91%8B+I%27m+Daniel+Lopez%2C+Systems+Engineer&duration=4000" alt="Typing introduction: Hey, I'm Daniel Lopez, Systems Engineer" />
 
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&pause=1500&color=AAAAAA&center=true&vCenter=true&multiline=false&width=900&height=40&lines=Accenture+%7C+Universidad+EAN+%7C+Universidad+Nacional+de+Colombia&duration=4000" alt="Accenture, Universidad EAN and Universidad Nacional de Colombia" />
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&size=16&pause=1500&color=2DD4BF&center=true&vCenter=true&multiline=false&width=900&height=40&lines=Accenture+%7C+Universidad+EAN+%7C+Universidad+Nacional+de+Colombia&duration=4000" alt="Accenture, Universidad EAN and Universidad Nacional de Colombia" />
 
 I build reliable software, responsible data-extraction pipelines, and reproducible security experiments.
 
@@ -15,14 +15,16 @@ I build reliable software, responsible data-extraction pipelines, and reproducib
 
 ## About me
 
-- 🎓 Systems Engineering graduate and Modern Languages student based in Bogotá, Colombia.
-- 🧪 Former Quality Engineering Intern at Accenture, with experience in functional testing, end-to-end flow validation, defect tracking, and test evidence.
-- 🐍 I build modular Python pipelines for web scraping, data cleaning, automation, and analysis.
-- 🛡️ I explore Linux endpoint security through reproducible labs, audit logs, SIEM-like rules, and anomaly detection.
-- 🤝 Former Algorithms and Programming Teaching Assistant, with a strong interest in clear documentation and collaborative problem-solving.
-- 🚗 Currently improving a vehicle-data pipeline built around public JSON APIs, pagination, validation, and structured persistence.
+```text
+Systems Engineering Graduate  → Universidad EAN
+Quality Engineering Intern    → Accenture | Functional & end-to-end testing
+Teaching Assistant            → Universidad EAN | Algorithms & Programming
+Mobile Development Diploma    → Universidad Nacional de Colombia
+Python Data Projects          → Web scraping | APIs | Automation | pandas
+Linux Endpoint Security       → auditd | SIEM-like rules | Isolation Forest
+```
 
-> I enjoy turning complex technical problems into practical, testable, and well-documented solutions.
+> I enjoy building reliable, well-documented systems and turning data, testing, and security problems into practical solutions.
 
 ---
 
