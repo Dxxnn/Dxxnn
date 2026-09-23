@@ -26,16 +26,16 @@
   <rect x="30" y="28" width="940" height="238" rx="13" class="card"/>
   <text x="60" y="72" class="title">GitHub Analytics</text>
   <text x="60" y="100" class="muted">@Dxxnn · public activity</text>
-  <text x="60" y="161" class="big">37</text>
-  <text x="60" y="185" class="label">contributions</text>
+  <text x="60" y="161" class="big">40</text>
+  <text x="60" y="185" class="label">commits</text>
   <text x="60" y="205" class="muted">in the last 12 months</text>
-  <text x="60" y="235" class="label"><tspan class="teal">3</tspan> public repos · <tspan class="teal">34</tspan> commits</text>
-  <text x="930" y="72" text-anchor="end" class="muted">contributions by week</text>
+  <text x="60" y="235" class="label"><tspan class="teal">3</tspan> public repos · <tspan class="teal">40</tspan> commits</text>
+  <text x="930" y="72" text-anchor="end" class="muted">commits by week</text>
   
   <line x1="345.0" y1="174" x2="930.0" y2="174" class="grid"/>
   <line x1="345.0" y1="230" x2="930.0" y2="230" class="grid"/>
-  <path d="M 345.0 230.0 L 345.0 230.0 L 356.2 230.0 L 367.5 230.0 L 378.8 230.0 L 390.0 230.0 L 401.2 230.0 L 412.5 230.0 L 423.8 230.0 L 435.0 230.0 L 446.2 230.0 L 457.5 230.0 L 468.8 230.0 L 480.0 230.0 L 491.2 230.0 L 502.5 230.0 L 513.8 230.0 L 525.0 230.0 L 536.2 230.0 L 547.5 230.0 L 558.8 230.0 L 570.0 230.0 L 581.2 230.0 L 592.5 230.0 L 603.8 230.0 L 615.0 230.0 L 626.2 230.0 L 637.5 230.0 L 648.8 230.0 L 660.0 230.0 L 671.2 230.0 L 682.5 230.0 L 693.8 230.0 L 705.0 230.0 L 716.2 230.0 L 727.5 230.0 L 738.8 230.0 L 750.0 118.0 L 761.2 230.0 L 772.5 230.0 L 783.8 230.0 L 795.0 230.0 L 806.2 230.0 L 817.5 230.0 L 828.8 230.0 L 840.0 204.5 L 851.2 230.0 L 862.5 230.0 L 873.8 230.0 L 885.0 230.0 L 896.2 179.1 L 907.5 230.0 L 918.8 230.0 L 930.0 230.0 L 930.0 230.0 Z" fill="url(#activityFill)"/>
-  <path d="M 345.0 230.0 L 356.2 230.0 L 367.5 230.0 L 378.8 230.0 L 390.0 230.0 L 401.2 230.0 L 412.5 230.0 L 423.8 230.0 L 435.0 230.0 L 446.2 230.0 L 457.5 230.0 L 468.8 230.0 L 480.0 230.0 L 491.2 230.0 L 502.5 230.0 L 513.8 230.0 L 525.0 230.0 L 536.2 230.0 L 547.5 230.0 L 558.8 230.0 L 570.0 230.0 L 581.2 230.0 L 592.5 230.0 L 603.8 230.0 L 615.0 230.0 L 626.2 230.0 L 637.5 230.0 L 648.8 230.0 L 660.0 230.0 L 671.2 230.0 L 682.5 230.0 L 693.8 230.0 L 705.0 230.0 L 716.2 230.0 L 727.5 230.0 L 738.8 230.0 L 750.0 118.0 L 761.2 230.0 L 772.5 230.0 L 783.8 230.0 L 795.0 230.0 L 806.2 230.0 L 817.5 230.0 L 828.8 230.0 L 840.0 204.5 L 851.2 230.0 L 862.5 230.0 L 873.8 230.0 L 885.0 230.0 L 896.2 179.1 L 907.5 230.0 L 918.8 230.0 L 930.0 230.0" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M 345.0 230.0 L 345.0 230.0 L 356.5 230.0 L 367.9 230.0 L 379.4 230.0 L 390.9 230.0 L 402.4 230.0 L 413.8 230.0 L 425.3 230.0 L 436.8 230.0 L 448.2 230.0 L 459.7 230.0 L 471.2 230.0 L 482.6 230.0 L 494.1 230.0 L 505.6 230.0 L 517.1 230.0 L 528.5 230.0 L 540.0 230.0 L 551.5 230.0 L 562.9 230.0 L 574.4 230.0 L 585.9 230.0 L 597.4 230.0 L 608.8 230.0 L 620.3 230.0 L 631.8 230.0 L 643.2 230.0 L 654.7 230.0 L 666.2 230.0 L 677.6 230.0 L 689.1 230.0 L 700.6 230.0 L 712.1 230.0 L 723.5 230.0 L 735.0 230.0 L 746.5 118.0 L 757.9 230.0 L 769.4 230.0 L 780.9 230.0 L 792.4 230.0 L 803.8 230.0 L 815.3 230.0 L 826.8 230.0 L 838.2 208.7 L 849.7 230.0 L 861.2 230.0 L 872.6 230.0 L 884.1 230.0 L 895.6 150.0 L 907.1 230.0 L 918.5 230.0 L 930.0 230.0 L 930.0 230.0 Z" fill="url(#activityFill)"/>
+  <path d="M 345.0 230.0 L 356.5 230.0 L 367.9 230.0 L 379.4 230.0 L 390.9 230.0 L 402.4 230.0 L 413.8 230.0 L 425.3 230.0 L 436.8 230.0 L 448.2 230.0 L 459.7 230.0 L 471.2 230.0 L 482.6 230.0 L 494.1 230.0 L 505.6 230.0 L 517.1 230.0 L 528.5 230.0 L 540.0 230.0 L 551.5 230.0 L 562.9 230.0 L 574.4 230.0 L 585.9 230.0 L 597.4 230.0 L 608.8 230.0 L 620.3 230.0 L 631.8 230.0 L 643.2 230.0 L 654.7 230.0 L 666.2 230.0 L 677.6 230.0 L 689.1 230.0 L 700.6 230.0 L 712.1 230.0 L 723.5 230.0 L 735.0 230.0 L 746.5 118.0 L 757.9 230.0 L 769.4 230.0 L 780.9 230.0 L 792.4 230.0 L 803.8 230.0 L 815.3 230.0 L 826.8 230.0 L 838.2 208.7 L 849.7 230.0 L 861.2 230.0 L 872.6 230.0 L 884.1 230.0 L 895.6 150.0 L 907.1 230.0 L 918.5 230.0 L 930.0 230.0" fill="none" stroke="#2DD4BF" stroke-width="3" stroke-linejoin="round"/>
   <text x="345.0" y="250" class="tiny muted">52 weeks ago</text>
   <text x="930.0" y="250" text-anchor="end" class="tiny muted">now</text>
 
@@ -69,11 +69,11 @@
   <rect x="30" y="516" width="455" height="190" rx="13" class="card"/>
   <text x="58" y="556" class="section">Stats</text>
   <circle cx="65" cy="590" r="4" fill="#58A6FF"/>
-  <text x="80" y="595" class="label">Contributions</text>
-  <text x="450" y="595" text-anchor="end" class="value">37</text>
+  <text x="80" y="595" class="label">Tracked actions</text>
+  <text x="450" y="595" text-anchor="end" class="value">40</text>
   <circle cx="65" cy="625" r="4" fill="#2DD4BF"/>
   <text x="80" y="630" class="label">Commits</text>
-  <text x="450" y="630" text-anchor="end" class="value teal">34</text>
+  <text x="450" y="630" text-anchor="end" class="value teal">40</text>
   <circle cx="65" cy="660" r="4" fill="#A78BFA"/>
   <text x="80" y="665" class="label">Pull requests</text>
   <text x="450" y="665" text-anchor="end" class="value purple">0</text>
@@ -89,7 +89,7 @@
   <rect x="602.6" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="617.8" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="633.0" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
-  <rect x="648.2" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
+  <rect x="648.3" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="663.5" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="678.7" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="693.9" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
@@ -106,7 +106,7 @@
   <rect x="861.2" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="876.4" y="676.0" width="11.2" height="2.0" rx="2" fill="#21262D"/>
   <rect x="891.6" y="644.5" width="11.2" height="31.5" rx="2" fill="#2DD4BF"/>
-  <rect x="906.8" y="592.0" width="11.2" height="84.0" rx="2" fill="#2DD4BF"/><text x="559.0" y="701" class="tiny muted">0</text><text x="650.2" y="701" class="tiny muted">6</text><text x="741.5" y="701" class="tiny muted">12</text><text x="832.8" y="701" class="tiny muted">18</text><text x="908.8" y="701" class="tiny muted">23</text>
+  <rect x="906.8" y="592.0" width="11.2" height="84.0" rx="2" fill="#2DD4BF"/><text x="559.0" y="701" class="tiny muted">0</text><text x="650.3" y="701" class="tiny muted">6</text><text x="741.5" y="701" class="tiny muted">12</text><text x="832.8" y="701" class="tiny muted">18</text><text x="908.8" y="701" class="tiny muted">23</text>
 
-  <text x="970" y="727" text-anchor="end" class="muted tiny">Generated daily from GitHub API</text>
+  <text x="970" y="727" text-anchor="end" class="muted tiny">Updated 23 Sep 2026 from GitHub API</text>
 </svg>
